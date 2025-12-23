@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | African Health Initiative</title>
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-11-27 at 00.05.46_31a93fd1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #054403;
+            --accent-gold: #ff9900;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --light-bg: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
+
+        /* Navigation Bar */
+        nav { background: var(--primary-green); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .logo-area { display: flex; align-items: center; text-decoration: none; color: white; }
+        .logo-area img { height: 55px; border-radius: 50%; margin-right: 12px; border: 2px solid white; }
+        .logo-text h1 { font-size: 1.4rem; letter-spacing: 1px; }
+        .logo-text p { font-size: 0.8rem; color: var(--accent-gold); }
+
+        .nav-links { display: flex; list-style: none; transition: 0.4s ease; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; font-size: 1rem; position: relative; padding: 5px 0; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: var(--accent-gold); transition: 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .mobile-menu-btn { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+
+        /* Header Section */
+        .page-header { background: linear-gradient(rgba(5, 68, 3, 0.85), rgba(5, 68, 3, 0.85)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 350px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
+        .page-header h2 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .page-header p { font-size: 1.2rem; max-width: 700px; color: #e0e0e0; }
+
+        /* General Section Layout */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { color: var(--primary-green); font-size: 2.5rem; margin-bottom: 15px; position: relative; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; position: absolute; width: 80px; height: 4px; background: var(--accent-gold); bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--light-bg); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.4s; border-bottom: 5px solid transparent; }
+        .service-card:hover { transform: translateY(-10px); border-bottom: 5px solid var(--primary-green); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .service-card img { width: 100%; height: 220px; object-fit: cover; }
+        .service-info { padding: 30px; }
+        .service-info h3 { color: var(--primary-green); margin-bottom: 15px; font-size: 1.4rem; }
+        .service-info ul { list-style: none; }
+        .service-info li { margin-bottom: 10px; display: flex; align-items: center; font-size: 0.95rem; }
+        .service-info li i { color: var(--accent-gold); margin-right: 12px; font-size: 1rem; }
+
+        /* Charity Camp Section */
+        .charity-section { background-color: #f0f4f0; }
+        .charity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .charity-content h3 { color: var(--primary-green); font-size: 2rem; margin-bottom: 20px; }
+        .charity-item { display: flex; margin-bottom: 25px; }
+        .charity-icon { background: var(--primary-green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 20px; flex-shrink: 0; }
+        .charity-text h4 { font-size: 1.2rem; margin-bottom: 5px; color: var(--primary-green); }
+        .charity-image img { width: 100%; border-radius: 20px; box-shadow: 20px 20px 0px var(--primary-green); }
+
+        /* Footer */
+        footer { background: #111; color: white; padding: 60px 10% 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: var(--accent-gold); margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-col p, .footer-col li { color: #bbb; font-size: 0.9rem; margin-bottom: 10px; }
+        .footer-col ul { list-style: none; }
+        .footer-col a { color: #bbb; text-decoration: none; transition: 0.3s; }
+        .footer-col a:hover { color: white; padding-left: 5px; }
+        .bottom-bar { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.8rem; color: #777; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .charity-grid { grid-template-columns: 1fr; }
+            .charity-image { order: -1; }
+            section { padding: 60px 5%; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links { position: fixed; top: 75px; left: -100%; width: 100%; height: calc(100vh - 75px); background: var(--primary-green); flex-direction: column; align-items: center; padding-top: 50px; }
+            .nav-links.active { left: 0; }
+            .nav-links li { margin: 20px 0; }
+            .page-header h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-area">
+            <img src="WhatsApp Image 2025-11-27 at 00.05.46_31a93fd1.jpg" alt="AHI Logo">
+            <div class="logo-text">
+                <h1>Africa Health Initiative</h1>
+                <p>Quality Health for All</p>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h2>Our Services & Projects</h2>
+        <p>Comprehensive and innovative healthcare practices committed to improving the livelihood of African communities through compassion and innovation.</p>
+    </header>
+
+    <section>
+        <div class="section-title">
+            <h2>1. Medical Services</h2>
+            <p>Quality health solutions tailored for the African continent.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="WhatsApp Image 2025-12-23 at 4.06.07 PM.jpeg" alt="Medicare">
+                <div class="service-info">
+                    <h3>Clinical Care</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> General Medicare Services</li>
+                        <li><i class="fas fa-check-circle"></i> Medical Consultations & Check-ups</li>
+                        <li><i class="fas fa-check-circle"></i> Emergency & First Aid Care</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="WhatsApp Image 2025-12-23 at 4.06.06 PM.jpeg" alt="Awareness">
+                <div class="service-info">
+                    <h3>Prevention & Wellness</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Health Education & Awareness</li>
+                        <li><i class="fas fa-check-circle"></i> Rehabilitation Services</li>
+                        <li><i class="fas fa-check-circle"></i> Access to Natural Health Products</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="WhatsApp Image 2025-12-23 at 4.06.08 PM.jpeg" alt="R&D">
+                <div class="service-info">
+                    <h3>AHI Pharmaceuticals</h3>
+                    <p>Our manufacturing, Research and Development arm producing over 100 health and wellness products for the African market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="charity-section">
+        <div class="section-title">
+            <h2>2. AHI Charity Camp</h2>
+            <p>Physical and mental healthcare for underserved communities in Uganda and beyond.</p>
+        </div>
+        <div class="charity-grid">
+            <div class="charity-content">
+                <div class="charity-item">
+                    <div class="charity-icon"><i class="fas fa-apple-alt"></i></div>
+                    <div class="charity-text">
+                        <h4>Food Distribution</h4>
+                        <p>Feeding hundreds of families daily with support from members and benevolent donors.</p>
+                    </div>
+                </div>
+                <div class="charity-item">
+                    <div class="charity-icon"><i class="fas fa-tshirt"></i></div>
+                    <div class="charity-text">
+                        <h4>Clothing Drives</h4>
+                        <p>Providing at least one set of clothes per year to one million individuals in extreme poverty.</p>
+                    </div>
+                </div>
+                <div class="charity-item">
+                    <div class="charity-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                    <div class="charity-text">
+                        <h4>Quality Healthcare Access</h4>
+                        <p>Life-changing treatment for deformities, congenital conditions, and infections via mobile clinics.</p>
+                    </div>
+                </div>
+                <div class="charity-item">
+                    <div class="charity-icon"><i class="fas fa-faucet"></i></div>
+                    <div class="charity-text">
+                        <h4>Sanitation & Prevention</h4>
+                        <p>Partnering with local authorities to provide preventive control against infections in less privileged communities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="charity-image">
+                <img src="WhatsApp Image 2025-12-23 at 4.17.33 PM.jpeg" alt="AHI Outreach">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About AHI</h4>
+                <p>Combating death through quality, accessible, and transformative healthcare solutions across Africa.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Reach</h4>
+                <p>Head Office: St. Andrew's Medical Centre, Masajja</p>
+                <p>Members: 500,000+</p>
+                <p>Products: 100+ Health Products</p>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            &copy; 2025 African Health Initiative (AHI). All Rights Reserved. | Designed for Vision 2030
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const links = document.getElementById('navLinks');
+            links.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

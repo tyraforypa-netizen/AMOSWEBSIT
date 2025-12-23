@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | African Health Initiative</title>
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-11-27 at 00.05.46_31a93fd1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-green: #054403; --white: #ffffff; --light-gray: #f4f4f4; --accent: #ff9900; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        
+        nav { background: var(--primary-green); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo-container { display: flex; align-items: center; color: white; text-decoration: none; }
+        .logo-container img { height: 50px; border-radius: 50%; margin-right: 10px; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: white; text-decoration: none; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+        .container { padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+        .info-panel { background: var(--light-gray); padding: 40px; border-radius: 15px; }
+        .info-panel h2 { color: var(--primary-green); margin-bottom: 25px; }
+        .contact-item { display: flex; margin-bottom: 20px; align-items: flex-start; }
+        .contact-item i { font-size: 1.2rem; color: var(--primary-green); margin-right: 15px; margin-top: 5px; }
+
+        .registration-box { background: white; padding: 20px; border-radius: 10px; border-top: 4px solid var(--accent); margin-top: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .registration-box h4 { margin-bottom: 10px; color: #333; }
+
+        .form-panel { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: var(--primary-green); box-shadow: 0 0 0 3px rgba(5, 68, 3, 0.1); }
+        .submit-btn { background: var(--primary-green); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #0a6b05; transform: scale(1.02); }
+
+        footer { background: #111; color: white; padding: 40px 10% 20px; text-align: center; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: var(--primary-green); text-align: center; padding: 20px 0; }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 15px 0; }
+            .menu-toggle { display: block; }
+            .container { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo-container">
+            <img src="WhatsApp Image 2025-11-27 at 00.05.46_31a93fd1.jpg" alt="AHI Logo">
+            <div><strong>Africa Health Initiative</strong><br></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <div class="container">
+        <div class="info-panel">
+            <h2>Find Us</h2>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Head Office:</strong><br>
+                    St. Andrew's Medical Centre, Kampala
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-building"></i>
+                <div>
+                    <strong>Vision 2030 Headquarters:</strong><br>
+                    AHI Building
+                </div>
+            </div>
+
+            <div class="registration-box">
+                <h4>Membership Registration</h4>
+                <p><strong>Fee:</strong></p>
+                <p><strong>Basci(individual):</strong> UGX 50,000</p>
+                <p><strong>Standard(Couple):</strong> UGX 100,000</p>
+                <p><strong>Premium(Family):</strong> UGX 200,000</p>
+                <p><strong>Required:</strong> National ID & Next of Kin Details</p>
+            </div>
+        </div>
+
+        <div class="form-panel">
+            <h2>Send a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 African Health Initiative. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your message has been sent successfully. Our team will get back to you!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

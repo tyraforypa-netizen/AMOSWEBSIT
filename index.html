@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | African Health Initiative</title>
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-11-27 at 00.05.46_31a93fd1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-green: #054403; --white: #ffffff; --light-gray: #f4f4f4; --accent: #ff9900; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.6; color: #333; }
+        
+        /* Navigation */
+        nav { background: var(--primary-green); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .logo-container { display: flex; align-items: center; color: white; text-decoration: none; }
+        .logo-container img { height: 50px; border-radius: 50%; margin-right: 10px; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+        /* Hero Section */
+        .hero { height: 80vh; background: linear-gradient(rgba(5, 68, 3, 0.7), rgba(5, 68, 3, 0.7)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 20px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 800px; }
+        .btn { background: var(--accent); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #e68a00; transform: translateY(-3px); }
+
+        /* Story Section */
+        .section { padding: 80px 10%; }
+        .section-title { text-align: center; color: var(--primary-green); margin-bottom: 40px; font-size: 2.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--light-gray); padding: 30px; border-radius: 10px; border-left: 5px solid var(--primary-green); }
+
+        /* Footer */
+        footer { background: #111; color: white; padding: 50px 10% 20px; text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
+        .footer-links { list-style: none; text-align: left; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #ccc; text-decoration: none; }
+        .copy { border-top: 1px solid #333; padding-top: 20px; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: var(--primary-green); text-align: center; padding: 20px 0; }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 15px 0; }
+            .menu-toggle { display: block; }
+            .hero-content h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo-container">
+            <img src="WhatsApp Image 2025-11-27 at 00.05.46_31a93fd1.jpg" alt="AHI Logo">
+            <div><strong>Africa Health Initiative</strong><br></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Quality Health for All</h1>
+            <p>Combating humanity's greatest enemy—death—through quality, accessible, and transformative healthcare solutions across Africa.</p>
+            <a href="about.html" class="btn">Explore Our Vision</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Story</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Founded in 2020</h3>
+                <p>Started by three graduates with a shared passion for transforming African healthcare.</p>
+            </div>
+            <div class="card">
+                <h3>Strategic Growth</h3>
+                <p>Officially registered as Amodas Mobiclinic in 2023, later rebranded to African Health Initiative (AHI).</p>
+            </div>
+            <div class="card">
+                <h3>Today</h3>
+                <p>A fast-growing initiative sustained through member contributions and global African donations.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>AHI</h3>
+                <p>Africa's leading benchmark for excellent and innovative healthcare practices.</p>
+            </div>
+            <ul class="footer-links">
+                <li><strong>Quick Links</strong></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+            <div>
+                <p>St. Andrew's Medical Centre, Kampala</p>
+                <p>Over 500,000 active members</p>
+            </div>
+        </div>
+        <div class="copy">&copy; 2025 African Health Initiative. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
